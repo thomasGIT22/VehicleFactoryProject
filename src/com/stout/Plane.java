@@ -1,16 +1,19 @@
 package com.stout;
 
 public class Plane implements IVehicle {
-    public int numberOfWheels;
     public String licensePlateNumber;
     public String color;
-    public double cost;
+    public int year;
+    private String make;
+    private String model;
 
-    public Plane(int numberOfWheels, String licensePlateNumber, String color, double cost) {
-        this.numberOfWheels = numberOfWheels;
+    public Plane(String licensePlateNumber, String color, int year, String make,
+                 String model) {
         this.licensePlateNumber = licensePlateNumber;
         this.color = color;
-        this.cost = cost;
+        this.year = year;
+        this.make = make;
+        this.model = model;
     }
 
     @Override
@@ -35,10 +38,11 @@ public class Plane implements IVehicle {
     @Override
     public String toString() {
         return "Plane{" +
-                "numberOfWheels=" + numberOfWheels +
-                ", licensePlateNumber='" + licensePlateNumber + '\'' +
+                "licensePlateNumber='" + licensePlateNumber + '\'' +
                 ", color='" + color + '\'' +
-                ", cost=" + cost +
+                ", year=" + year +
+                ", make=" + make +
+                ", model=" + model +
                 '}';
     }
 }
