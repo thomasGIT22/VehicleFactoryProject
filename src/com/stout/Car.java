@@ -1,19 +1,17 @@
 package com.stout;
 
 public class Car implements IVehicle {
-    public int numberOfWheels;
-    public String licensePlateNumber;
-    public String color;
-    public double cost;
+    private int numberOfWheels;
+    private String licensePlateNumber;
+    private String color;
+    private double cost;
 
     public Car(int numberOfWheels, String licensePlateNumber, String color, double cost) {
-        this.numberOfWheels = numberOfWheels;
+        this.numberOfWheels =numberOfWheels;
         this.licensePlateNumber = licensePlateNumber;
         this.color = color;
         this.cost = cost;
     }
-
-    public Car() {}
 
     @Override
     public void accelerate() {
@@ -27,5 +25,15 @@ public class Car implements IVehicle {
 
     public void shareVehicleType() {
         System.out.println("I am a car.");
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "numberOfWheels=" + numberOfWheels +
+                ", licensePlateNumber='" + licensePlateNumber + '\'' +
+                ", color='" + color + '\'' +
+                ", cost=" + cost +
+                '}';
     }
 }

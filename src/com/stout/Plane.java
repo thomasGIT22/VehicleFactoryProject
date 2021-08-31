@@ -5,9 +5,13 @@ public class Plane implements IVehicle {
     public String licensePlateNumber;
     public String color;
     public double cost;
-    IVehicle _iVehicle;
 
-    public Plane() {}
+    public Plane(int numberOfWheels, String licensePlateNumber, String color, double cost) {
+        this.numberOfWheels = numberOfWheels;
+        this.licensePlateNumber = licensePlateNumber;
+        this.color = color;
+        this.cost = cost;
+    }
 
     @Override
     public void accelerate() {
@@ -26,5 +30,15 @@ public class Plane implements IVehicle {
 
     public void fly() {
         System.out.println("Plane is flying.");
+    }
+
+    @Override
+    public String toString() {
+        return "Plane{" +
+                "numberOfWheels=" + numberOfWheels +
+                ", licensePlateNumber='" + licensePlateNumber + '\'' +
+                ", color='" + color + '\'' +
+                ", cost=" + cost +
+                '}';
     }
 }
