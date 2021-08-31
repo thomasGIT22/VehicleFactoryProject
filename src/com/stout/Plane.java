@@ -4,11 +4,16 @@ public class Plane implements IVehicle {
     public String licensePlateNumber;
     public String color;
     public int year;
+    private String make;
+    private String model;
 
-    public Plane(String licensePlateNumber, String color, int year) {
+    public Plane(String licensePlateNumber, String color, int year, String make,
+                 String model) {
         this.licensePlateNumber = licensePlateNumber;
         this.color = color;
         this.year = year;
+        this.make = make;
+        this.model = model;
     }
 
     @Override
@@ -36,6 +41,8 @@ public class Plane implements IVehicle {
                 "licensePlateNumber='" + licensePlateNumber + '\'' +
                 ", color='" + color + '\'' +
                 ", year=" + year +
+                ", make=" + make +
+                ", model=" + model +
                 '}';
     }
 }

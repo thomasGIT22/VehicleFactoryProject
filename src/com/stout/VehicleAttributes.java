@@ -5,15 +5,18 @@ import java.util.concurrent.ThreadLocalRandom;
 public class VehicleAttributes {
 
     public Car getCarWithAttributes() {
-        return new Car(getRandomLicensePlate(), getRandomColor(), getRandomYear());
+        return new Car(getRandomLicensePlate(), getRandomColor(), getRandomYear(),
+                "Toyota", "Camry");
     }
 
     public Truck getTruckWithAttributes() {
-        return new Truck(getRandomLicensePlate(), getRandomColor(), getRandomYear());
+        return new Truck(getRandomLicensePlate(), getRandomColor(), getRandomYear(),
+                "Chevrolet", "Silverado");
     }
 
     public Plane getPlaneWithAttributes() {
-        return new Plane(getRandomLicensePlate(), getRandomColor(), getRandomYear());
+        return new Plane(getRandomLicensePlate(), getRandomColor(), getRandomYear(),
+                "Boeing", "737");
     }
 
     public String getRandomLicensePlate() {
@@ -21,8 +24,8 @@ public class VehicleAttributes {
         for (int firstThree = 0; firstThree < 3; firstThree++) {
             licensePlate[firstThree] = getRandomLicensePlateLetter();
         }
-        for (int secondThree = 4; secondThree < 7; secondThree++) {
-            licensePlate[secondThree] = getRandomLicensePlateNumber();
+        for (int lastThree = 4; lastThree < 7; lastThree++) {
+            licensePlate[lastThree] = getRandomLicensePlateNumber();
         }
         return String.copyValueOf(licensePlate);
     }

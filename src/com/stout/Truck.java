@@ -4,11 +4,16 @@ public class Truck implements IVehicle {
     public String licensePlateNumber;
     public String color;
     public int year;
+    private String make;
+    private String model;
 
-    public Truck(String licensePlateNumber, String color, int year) {
+    public Truck(String licensePlateNumber, String color, int year, String make,
+                 String model) {
         this.licensePlateNumber = licensePlateNumber;
         this.color = color;
         this.year = year;
+        this.make = make;
+        this.model = model;
     }
 
     public void accelerate() {
@@ -31,6 +36,8 @@ public class Truck implements IVehicle {
                 "licensePlateNumber='" + licensePlateNumber + '\'' +
                 ", color='" + color + '\'' +
                 ", year=" + year +
+                ", make=" + make +
+                ", model=" + model +
                 '}';
     }
 }
